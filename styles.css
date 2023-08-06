@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+}
+
+/* now right side u scroll hoi ase so ami tak close kri dim ru over folow xdirection hidden di*/
+#wrapper{
+    height: 100vh; /* we want my website is is in inside wrapper class div ke andr .so thats why set it hegiht of veiport which is 100vh */
+    overflow-x: hidden;
+    overflow-y: auto; 
+    /* we r playing here 3d game so we have to define perspetive that is we should on perspective 10px means the distance between Z=0 plane and my eye is 10 px*/
+    perspective: 10px;
+
+}
+/* inside container two images for overlapping this two images we give position absolute thats why we give relative positon to container */
+.container{
+    position: relative;
+    display: flex;  /*ye krne se flex ke direction left to right hga jo ki defaullt hta hai but we want to top to bottom so we set flexdirection x  */
+    justify-content: center; /* we want adventure in middle thats why we on flex and wrote this justify content and aligin item */
+    align-items: center;
+    height: 100%;
+    transform-style:preserve-3d ; /* jo v 3d me change kiya h usko htana nhi h so we usse this */
+    z-index:-1; 
+}
+  .background{
+    transform:translateZ(-40px) scale(5);  /* we use this for dur me imge rkhne ke liye translateZ and scale is for zooming */
+ } 
+  .foreground{
+    transform: translateZ(-20px) scale(3);
+} 
+
+
+.background, .foreground{
+    position: absolute;
+    height: 100%;
+     width: 100%;
+    z-index: -1;
+    object-fit: cover;    /* object is fititng looking is beautiful */          
+} 
+h1{
+
+    position: absolute;
+    top: 5rem;
+    font-size: 10rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+    letter-spacing: 4px;
+}
+section{
+    background-color: rgb(45,45,45);
+    color: white;
+    padding: 5rem 0;
+}
+.secHeading{
+    font-size: 1.5rem;
+    padding: 0 10rem;
+}
+.text{
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+}
+.bg{
+    position: relative;
+    width: 100%;
+    background-attachment: fixed; /* we want to fixed background when we scrolling so use this  */
+    height: 500px;
+    background-size: cover;  /* image place in centre and space all taken in viewport us ethis two property */
+    background-position: center;
+    
+}
+.desc{
+    position: absolute;
+    background-color: white;
+    padding: 0.5rem 2.5rem;
+    /* centre ma lana padhega we didnot make flex to use justify content and align item here we use basic */
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateX(-50%);
+    color: black;
+    font-size: 3.5 rem;
+    font-weight: 600;
+
+}
+
+.bg1{
+    background-image: url(mountain-bike.jpg);
+}
+.bg2{
+    background-image: url(Para.jpg);
+    
+}
+.bg3{
+    background-image: url(sport-3.jpg);
+}
